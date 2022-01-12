@@ -1,13 +1,13 @@
-var cvs = document.getElementById("canvas");
-var ctx = cvs.getContext("2d");
+let cvs = document.getElementById("canvas");
+let ctx = cvs.getContext("2d");
 
 // load images
 
-var bird = new Image();
-var bg = new Image();
-var fg = new Image();
-var pipeNorth = new Image();
-var pipeSouth = new Image();
+let bird = new Image();
+let bg = new Image();
+let fg = new Image();
+let pipeNorth = new Image();
+let pipeSouth = new Image();
 
 bird.src = "images/bird.png";
 bg.src = "images/bg.png";
@@ -18,20 +18,20 @@ pipeSouth.src = "images/pipeSouth.png";
 
 // some variables
 
-var gap = 85;
-var constant;
+let gap = 85;
+let constant;
 
-var bX = 10;
-var bY = 150;
+let bX = 10;
+let bY = 150;
 
-var gravity = 1.5;
+let gravity = 1.5;
 
-var score = 0;
+let score = 0;
 
 // audio files
 
-var fly = new Audio();
-var scor = new Audio();
+let fly = new Audio();
+let scor = new Audio();
 
 fly.src = "sounds/fly.mp3";
 scor.src = "sounds/score.mp3";
@@ -47,7 +47,7 @@ function moveUp() {
 
 // pipe coordinates
 
-var pipe = [];
+let pipe = [];
 
 pipe[0] = {
     x: cvs.width,
@@ -61,7 +61,7 @@ function draw() {
     ctx.drawImage(bg, 0, 0);
 
 
-    for (var i = 0; i < pipe.length; i++) {
+    for (let i = 0; i < pipe.length; i++) {
 
         constant = pipeNorth.height + gap;
         ctx.drawImage(pipeNorth, pipe[i].x, pipe[i].y);
